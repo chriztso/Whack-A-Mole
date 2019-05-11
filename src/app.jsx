@@ -12,6 +12,7 @@ class App extends React.Component{
         }
     this.start = this.start.bind(this);   
     this.changeTimeAndChoice = this.changeTimeAndChoice.bind(this); 
+    this.addScore = this.addScore.bind(this);
     }
 
     start(){
@@ -30,21 +31,28 @@ class App extends React.Component{
             clearTimeout(timeout2);
         }
     }
+    addScore(){
+        var score = this.state.score; 
+        this.setState({score: score + 1});
+    }
     render(){
         return (
           <div className = {AppStyle.wholeDiv}>
             <div className = {AppStyle.topHalf}>
+              <div className = {AppStyle.title}>
+                Hit Luffy!  
+              </div>
               <div className = {AppStyle.timeAndScore}>
                 <div className = {AppStyle.timeBox}>
-                    <span className = {AppStyle.time}>Time : </span> {this.state.time}
+                    <span className = {AppStyle.time}>Time : </span> <span className={AppStyle.timeText}>{this.state.time} </span>
                 </div>
                 <div className = {AppStyle.scoreBox}>
-                    <span className = {AppStyle.score}>Score : </span> {this.state.score}
+                    <span className = {AppStyle.score}>Score : </span> <span className={AppStyle.scoreText}>{this.state.score} </span>
                 </div>
-                <input type='submit' onClick={this.start} ></input>
+                <input type='submit' onClick={this.start} value="Start"></input>
               </div>
               <div className = {AppStyle.leaders}>
-                Leaders
+                High Scores
               </div>
             </div>
 
@@ -53,7 +61,7 @@ class App extends React.Component{
                 <div className = {AppStyle.mole}>
                     <div className={AppStyle.targetOuter}>
                     {this.state.choice === 1 &&
-                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target} onClick={this.addScore}></img>
                     }
                     </div>
                     <div >
@@ -63,7 +71,7 @@ class App extends React.Component{
                 <div className = {AppStyle.mole}>
                     <div className={AppStyle.targetOuter}>
                     {this.state.choice === 2 &&  
-                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target} onClick={this.addScore}></img>
                     }  
                     </div>
                     <div >
@@ -73,7 +81,7 @@ class App extends React.Component{
                 <div className = {AppStyle.mole}>
                     <div className={AppStyle.targetOuter}>
                       {this.state.choice === 3 &&
-                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target} onClick={this.addScore}></img>
                       }
                     </div>
                     <div >
@@ -85,7 +93,7 @@ class App extends React.Component{
                 <div className = {AppStyle.mole}>
                     <div className={AppStyle.targetOuter}>
                       {this.state.choice === 4 &&  
-                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target} onClick={this.addScore}></img>
                       }
                     </div>
                     <div >
@@ -95,7 +103,7 @@ class App extends React.Component{
                 <div className = {AppStyle.mole}>
                     <div className={AppStyle.targetOuter}>
                       {this.state.choice === 5 &&  
-                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target} onClick={this.addScore}></img>
                       }
                     </div>
                     <div >
@@ -105,7 +113,7 @@ class App extends React.Component{
                 <div className = {AppStyle.mole}>
                     <div className={AppStyle.targetOuter}>
                       {this.state.choice === 6 &&
-                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target} onClick={this.addScore}></img>
                       }
                     </div>
                    <div >
