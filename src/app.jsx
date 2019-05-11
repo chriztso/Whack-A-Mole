@@ -6,20 +6,27 @@ class App extends React.Component{
         this.state = {
             time : 60, 
             score : 0, 
-            choice: 0
+            choice: 0, 
+            timeout: null,
         }
-    this.start = this.start.bind(this);    
+    this.start = this.start.bind(this);   
+    this.changeTimeAndChoice = this.changeTimeAndChoice.bind(this); 
     }
+
     start(){
+        var timeout = setTimeout(this.changeTimeAndChoice, 1000);
+        this.setState({timeout : timeout});
+    }
+    changeTimeAndChoice(){
         var choices = [1,2,3,4,5,6];
-        for(var i = 59999; i >= 0; i--){
-            if(i % 100 === 0){
-              var second  =  i / 100;
-              this.setState({time : second});
-              var randomIndex = Math.floor(Math.random() * (choices.length - 1));
-              var newChoice = choices[randomIndex];
-              this.setState({choice : newChoice});
-            }
+        var timeChange = this.state.time - 1;
+        this.setState({time : timeChange});
+        var randomIndex = Math.floor(Math.random() * choices.length);
+        this.setState({choice : choices[randomIndex]});
+        var timeout2 = setTimeout(this.changeTimeAndChoice, 1000);
+        this.setState({timeout : timeout2});
+        if(this.state.timeout === 61){
+            clearTimeout(timeout2);
         }
     }
     render(){
@@ -27,6 +34,8 @@ class App extends React.Component{
             <div>
                 Time: {this.state.time}
                 Choice: {this.state.choice}
+                Timeout: {this.state.timeout}
+                <input type = 'submit' onClick = {this.start}></input>
             </div>
         )
     }
