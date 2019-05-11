@@ -1,4 +1,5 @@
 import React from 'react';
+import AppStyle from './app.css';
 
 class App extends React.Component{
     constructor(props){
@@ -31,12 +32,24 @@ class App extends React.Component{
     }
     render(){
         return (
-            <div>
-                Time: {this.state.time}
-                Choice: {this.state.choice}
-                Timeout: {this.state.timeout}
-                <input type = 'submit' onClick = {this.start}></input>
+          <div className = {AppStyle.wholeDiv}>
+            <div className = {AppStyle.topHalf}>
+              <div className = {AppStyle.timeAndScore}>
+                <div className = {AppStyle.timeBox}>
+                    <span className = {AppStyle.time}>Time : </span> {this.state.time}
+                </div>
+                <div className = {AppStyle.scoreBox}>
+                    <span className = {AppStyle.score}>Score : </span> {this.state.score}
+                </div>
+                <input type='submit' onClick={this.start}></input>
+              </div>
+              <div className = {AppStyle.leaders}>
+                Leaders
+              </div>
             </div>
+
+              
+          </div>
         )
     }
 }

@@ -1,0 +1,44 @@
+.wholeDiv{
+    background-color: lightblue;
+    height: 100vw;
+    width: 100vw;
+}
+
+.topHalf{
+    padding-top: 50px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+}
+
+.timeAndScore{
+    border: 3px solid white;
+    width: 150px;
+    height: 150px;
+    display: flex; 
+    flex-direction: column;
+}
+
+.time{
+    margin-right: 10px;
+}
+
+
+.score{
+    margin-right: 10px;
+}
+
+.timeBox{
+    margin: 15px;
+}
+
+.scoreBox{
+    margin: 15px;
+}
+
+.leaders{
+    width: 250px; 
+    height: 150px;
+    border: 3px solid white;
+    margin-left: 100px;
+}
