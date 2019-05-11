@@ -41,11 +41,79 @@ class App extends React.Component{
                 <div className = {AppStyle.scoreBox}>
                     <span className = {AppStyle.score}>Score : </span> {this.state.score}
                 </div>
-                <input type='submit' onClick={this.start}></input>
+                <input type='submit' onClick={this.start} ></input>
               </div>
               <div className = {AppStyle.leaders}>
                 Leaders
               </div>
+            </div>
+
+            <div className = {AppStyle.bottomHalf}>
+              <div className ={AppStyle.firstRow}>
+                <div className = {AppStyle.mole}>
+                    <div className={AppStyle.targetOuter}>
+                    {this.state.choice === 1 &&
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                    }
+                    </div>
+                    <div >
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/thosandSunny.png" className={AppStyle.ship}></img>
+                    </div>    
+                </div>
+                <div className = {AppStyle.mole}>
+                    <div className={AppStyle.targetOuter}>
+                    {this.state.choice === 2 &&  
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                    }  
+                    </div>
+                    <div >
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/thosandSunny.png" className={AppStyle.ship}></img>
+                    </div>   
+                </div>
+                <div className = {AppStyle.mole}>
+                    <div className={AppStyle.targetOuter}>
+                      {this.state.choice === 3 &&
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      }
+                    </div>
+                    <div >
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/thosandSunny.png" className={AppStyle.ship}></img>
+                    </div>    
+                </div>
+              </div>
+              <div className ={AppStyle.secondRow}>
+                <div className = {AppStyle.mole}>
+                    <div className={AppStyle.targetOuter}>
+                      {this.state.choice === 4 &&  
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      }
+                    </div>
+                    <div >
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/thosandSunny.png" className={AppStyle.ship}></img>
+                    </div>    
+                </div>
+                <div className = {AppStyle.mole}>
+                    <div className={AppStyle.targetOuter}>
+                      {this.state.choice === 5 &&  
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      }
+                    </div>
+                    <div >
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/thosandSunny.png" className={AppStyle.ship}></img>
+                    </div>    
+                </div>
+                <div className = {AppStyle.mole}>
+                    <div className={AppStyle.targetOuter}>
+                      {this.state.choice === 6 &&
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/luffy.jpg" className={AppStyle.target}></img>
+                      }
+                    </div>
+                   <div >
+                      <img src="https://s3.us-east-2.amazonaws.com/chrisfakephotos/thosandSunny.png" className={AppStyle.ship}></img>
+                    </div>    
+                </div>
+              </div>
+
             </div>
 
               
